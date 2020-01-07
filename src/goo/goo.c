@@ -2974,7 +2974,7 @@ goo_group_verify(goo_group_t *group,
   if (mpz_cmp(*chal, chal0) != 0)
     goto fail;
 
-  /* `ell` must be in the interval [ell',ell'+512]. */
+  /* `ell` must be in the interval [ell',ell'+GOO_ELLDIFF_MAX]. */
   mpz_add_ui(ell1, ell0, GOO_ELLDIFF_MAX);
 
   if (mpz_cmp(*ell, ell0) < 0 || mpz_cmp(*ell, ell1) > 0)
