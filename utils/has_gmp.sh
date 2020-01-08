@@ -35,7 +35,7 @@ CODE=`
   echo '}'
 `
 
-if echo "$CODE" | "$CC" -o /dev/null -lgmp -xc - > /dev/null 2>& 1; then
+if echo "$CODE" | "$CC" -o /dev/null -xc - -lgmp > /dev/null 2>& 1; then
   echo 'true'
 else
   echo 'false'
